@@ -11,11 +11,22 @@ package astaralgorithm;
  */
 public class AStarAlgorithm {
 
+    
+    private int[][] grid;
+    private int m1;
+    private int m2;
+    private int m3;
+    private int via;
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args) {
         // TODO code application logic here
+        // input the grid size and via cost
+        // input cell locations
+        //input connections???
+        
     }
     
 }
