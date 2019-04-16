@@ -50,15 +50,21 @@ public class AStarAlgorithm {
     
     public static void main(String[] args) {
         // TODO code application logic here
+        /*input file example:
+            30 100 6 //height width via_cost
+            3 2 //cell1
+            1 0  //cell2
+            0 0 //cell3
+            30 50 //cell4
+            20 60 //cell5
+            -1  //done
+        */
         Scanner in = new Scanner(System.in);
-        System.out.println("Please input Grid size: \nExample:30 100 a grid of height 30 and width 100");
         height = in.nextInt();
         width = in.nextInt();
         grid = new char[height][width];
-        System.out.println("Please input the via cost: ");
         via = in.nextInt();
         //intialise grid;
-        System.out.println("Please input the cells' locations, enter -1 when done: \nExample: 3 2 \n\t 4 5\n\t-1");
         int t1=0, t2=0;
         t1 = in.nextInt();
         while(t1 != -1){
@@ -66,14 +72,20 @@ public class AStarAlgorithm {
             grid[t1][t2] = 'c';
             t1 = in.nextInt();
         }
-        System.out.println("Please specify the target cells locations and the starting cell");
-        
-        // input the grid size and via cost
-        // input cell locations
-        // input connections???
-        // input start and target       
-        // start alogirthm 
-        // print grid with path
+        // input pre connections???
+        System.out.println("Please specify the target cells locations and the starting cell, to end enter -1");
+        int response = in.nextInt();
+        while(response != -1){
+           int t_x, t_y, s_x, s_y;
+           t_x = response;
+           t_y = in.nextInt();
+           s_x = in.nextInt();
+           s_y = in.nextInt();
+           // start alogirthm 
+          // print grid with path
+          System.out.println("Please specify the target cells locations and the starting cell, to end enter -1");
+          response = in.nextInt(); 
+        }
         // new start and target with the prev path in the grid!
     }
     
