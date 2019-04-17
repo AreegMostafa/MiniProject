@@ -21,10 +21,21 @@ public class AStarAlgorithm {
     private static char[][] grid;
     private static int height;
     private static int width;
-    private int m1;
-    private int m2;
-    private int m3;
-    private static int via;
+    private int m1_cost;
+    private int m2_cost;
+    private int m3_Cost;
+    private static int via_cost;
+    private static final char m1 = '1';
+    private static final char m2 = '2';
+    private static final char m3 = '3';
+    private static final char v1_2 = 'x';
+    private static final char v2_3 = '*';
+    private static final char cell = 'c';
+    private static final char nothing = '.';
+    private static final int move_1_cost = 1;
+    private static final int move_2_cost = 10;
+    private static final int move_3_cost = 20;
+    
     private TreeMap <Integer, HashMap<Pair<Integer, Integer>, Pair<Integer, Integer>>> current = new TreeMap<>();
     private HashMap<Integer, HashMap<Pair<Integer, Integer>, Pair<Integer, Integer>>> path = new HashMap<>();
     
@@ -39,7 +50,7 @@ public class AStarAlgorithm {
     private static void intialiseGrid (){
         for (int i = 0; i < height; i++){
             for(int j = 0; j < width; j++){
-                grid[i][j] = '.';
+                grid[i][j] = nothing;
             }
         }
     }
@@ -63,13 +74,13 @@ public class AStarAlgorithm {
         height = in.nextInt();
         width = in.nextInt();
         grid = new char[height][width];
-        via = in.nextInt();
+        via_cost = in.nextInt();
         //intialise grid;
         int t1=0, t2=0;
         t1 = in.nextInt();
         while(t1 != -1){
             t2 = in.nextInt();
-            grid[t1][t2] = 'c';
+            grid[t1][t2] = cell;
             t1 = in.nextInt();
         }
         // input pre connections???
